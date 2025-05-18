@@ -74,7 +74,7 @@ def next_unit_state(initial_state, row, col):
 def next_board_state(initial_state):
     row = len(initial_state)
     col = len(initial_state[0])
-    newBoard = np.zeroes((row, col))
+    newBoard = np.zeros((row, col))
 
     for x in range(row):
         for y in range(col):
