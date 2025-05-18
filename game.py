@@ -1,24 +1,43 @@
 import random
 import numpy as np
 
-def random_state(width, height):
-    board = np.zeros((width, height))
-    for x in range(width):
-        for y in range(height):
+def random_state(row, column):
+    board = np.zeros((row, column))
+    for x in range(row):
+        for y in range(column):
             board[x][y] = random.randint(0,1)
 
     return board
 
 def render(board):
-    width = len(board)
-    length = len(width)
-    newBoard = np.zeroes((width, length))
+    row = len(board)
+    column = len(row)
+    newBoard = np.empty((row + 2, column + 2), dtype=str)
+    output = ""
 
-    newBoard[0][0] = "-";
-    newBoard[0][1] = "-";
+    for y in range(column + 2):
+        newBoard[0][y] = "-"
+        output += "-"
+    output += "\n"
 
-    for x in range(width):
-        newBoard[0][x] += "-"
+    for x in range(row):
+        newBoard[x+1][0] = "|"
+        output += "|"
+        for y in range(column):
+            if board[x][y] == 1:
+                newBoard[x+1][y+1] = "#"
+                output += "#"
+            else:
+                newBoard[x+1][y+1] += " "
+                output += " "
+        newBoard[x+1][column+2] = "|"
+        output += "|\n"
+    
+    for y in range(column + 2):
+        newBoard[row+2][y] = "-"
+        output += "-"
+    print(output)
+    return newBoard
     
     # if statement for hashtag rendering
         
