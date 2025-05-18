@@ -11,7 +11,7 @@ def random_state(row, column):
 
 def render(board):
     row = len(board)
-    column = len(row)
+    column = len(board[0])
     newBoard = np.empty((row + 2, column + 2), dtype=str)
     output = ""
 
