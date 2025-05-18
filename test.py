@@ -1,5 +1,6 @@
 from game import random_state
 from game import next_board_state
+import numpy as np
 
 # TODO: there's a lot of repeated code here. Can
 # you move some of into reusable functions to
@@ -20,7 +21,7 @@ if __name__ == "__main__":
     ]
     actual_next_state1 = next_board_state(init_state1)
 
-    if expected_next_state1 == actual_next_state1:
+    if np.array_equal(expected_next_state1, actual_next_state1):
         print("PASSED 1")
     else:
         print ("FAILED 1!")
@@ -43,7 +44,7 @@ if __name__ == "__main__":
     ]
     actual_next_state2 = next_board_state(init_state2)
 
-    if expected_next_state2 == actual_next_state2:
+    if np.array_equal(expected_next_state2, actual_next_state2):
         print ("PASSED 2")
     else:
         print ("FAILED 2!")
