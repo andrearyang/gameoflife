@@ -46,7 +46,7 @@ def render(board):
 def next_unit_state(initial_state, row, col):
     neighbors = []
     r = len(initial_state)
-    c = len(row)
+    c = len(initial_state[0])
 
     for x in range(-1, 2):
         for y in range(-1, 2):
@@ -73,8 +73,8 @@ def next_unit_state(initial_state, row, col):
 
 def next_board_state(initial_state):
     row = len(initial_state)
-    col = len(row)
-    newBoard = np.zeroes((row, col))
+    col = len(initial_state[0])
+    newBoard = np.zeros((row, col))
 
     for x in range(row):
         for y in range(col):
