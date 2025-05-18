@@ -11,7 +11,7 @@ def random_state(row, column):
 
 def render(board):
     row = len(board)
-    column = len(row)
+    column = len(board[0])
     newBoard = np.empty((row + 2, column + 2), dtype=str)
     output = ""
 
@@ -46,7 +46,7 @@ def render(board):
 def next_unit_state(initial_state, row, col):
     neighbors = []
     r = len(initial_state)
-    c = len(row)
+    c = len(initial_state[0])
 
     for x in range(-1, 2):
         for y in range(-1, 2):
@@ -73,7 +73,7 @@ def next_unit_state(initial_state, row, col):
 
 def next_board_state(initial_state):
     row = len(initial_state)
-    col = len(row)
+    col = len(initial_state[0])
     newBoard = np.zeroes((row, col))
 
     for x in range(row):
