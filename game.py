@@ -1,16 +1,5 @@
 import random
 import numpy as np
-import matplotlib.pyplot as plt
-import time
-
-def show_board(board, pause_time=0.5):
-    plt.imshow(board, cmap='Greys', interpolation='nearest')
-    plt.xticks([])  # remove x axis ticks
-    plt.yticks([])  # remove y axis ticks
-    plt.grid(False)
-    plt.pause(pause_time)
-    plt.clf()  # clear after pause
-
 
 def random_state(row, column):
     board = np.zeros((row, column), dtype=int)
@@ -90,3 +79,5 @@ def next_board_state(initial_state):
             newBoard[x][y] = next_unit_state(initial_state, x, y)
     
     return newBoard
+
+def 
