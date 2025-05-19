@@ -30,11 +30,11 @@ def render(board):
             else:
                 newBoard[x+1][y+1] += " "
                 output += " "
-        newBoard[x+1][column+2] = "|"
+        newBoard[x+1][column+1] = "|"
         output += "|\n"
     
     for y in range(column + 2):
-        newBoard[row+2][y] = "-"
+        newBoard[row+1][y] = "-"
         output += "-"
     return output        
         
