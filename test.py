@@ -15,11 +15,11 @@ def show_board(board, pause_time=0.5):
     plt.pause(pause_time)
     plt.clf() 
 
-board = load_board_state('toad.txt')
-# plt.figure()
+board = load_board_state('converted_board.txt')
+plt.figure()
 
 while True:
     os.system('cls' if os.name == 'nt' else 'clear')
-    print(render(board))
+    show_board(board)
     board = next_board_state(board)
     time.sleep(0.2)
