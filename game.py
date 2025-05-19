@@ -75,3 +75,10 @@ def next_board_state(initial_state):
             newBoard[x][y] = next_unit_state(initial_state, x, y)
     
     return newBoard
+
+def load_board_state(path):
+    try:
+        output = np.genfromtxt(path, delimiter = " ", dtype=int)
+    except FileNotFoundError:
+        return "file not found"
+    return output

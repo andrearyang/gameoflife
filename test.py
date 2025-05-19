@@ -1,6 +1,7 @@
 from game import random_state
 from game import next_board_state
 from game import render
+from game import load_board_state
 import os
 import numpy as np
 import matplotlib.pyplot as plt
@@ -14,7 +15,7 @@ def show_board(board, pause_time=0.5):
     plt.pause(pause_time)
     plt.clf() 
 
-board = random_state(10, 10)
+board = load_board_state('toad.txt')
 # plt.figure()
 
 while True:
