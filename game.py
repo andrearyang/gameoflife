@@ -5,11 +5,11 @@ import time
 
 def show_board(board, pause_time=0.5):
     plt.imshow(board, cmap='Greys', interpolation='nearest')
-    plt.xticks([])  # remove x axis ticks
-    plt.yticks([])  # remove y axis ticks
+    plt.xticks([])
+    plt.yticks([])
     plt.grid(False)
     plt.pause(pause_time)
-    plt.clf()  # clear after pause
+    plt.clf()
 
 
 def random_state(row, column):
@@ -47,11 +47,7 @@ def render(board):
     for y in range(column + 2):
         newBoard[row+2][y] = "-"
         output += "-"
-    return output
-    
-    # if statement for hashtag rendering
-        
-    # we should prob return matrix rather than string
+    return output        
         
 def next_unit_state(initial_state, row, col):
     neighbors = 0
