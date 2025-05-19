@@ -15,7 +15,7 @@ def show_board(board, pause_time=0.5):
     plt.pause(pause_time)
     plt.clf() 
 
-board = load_board_state('converted_board.txt')
+board = load_board_state('/patterns/endless_life.txt')
 plt.figure()
 
 while True:
