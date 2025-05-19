@@ -14,6 +14,6 @@ def show_board(board, pause_time=0.5):
 
 board = random_state(10, 10)
 plt.figure()
-for _ in range(20):
+while True:
     show_board(board)
     board = next_board_state(board)

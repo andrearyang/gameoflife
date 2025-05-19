@@ -75,5 +75,3 @@ def next_board_state(initial_state):
             newBoard[x][y] = next_unit_state(initial_state, x, y)
     
     return newBoard
-
-def 
